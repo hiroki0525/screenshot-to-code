@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint-config-smarthr"],
+  "rules": {
+    "function-no-unknown": null
+  }
+}

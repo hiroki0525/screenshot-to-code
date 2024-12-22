@@ -1,0 +1,27 @@
+import React from 'react'
+
+import { {{ name }} } from '../{{ name }}'
+
+import type { Meta, StoryObj } from '@storybook/react'
+
+export default {
+  title: 'SomeCategory（カテゴリ）/{{ name }}',
+  component: {{ name }},
+  render: (args) => <{{ name }} {...args} />,
+  args: {
+  },
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+} satisfies Meta<typeof {{ name }}>
+
+export const Playground: StoryObj<typeof {{ name }}> = {
+  args: {
+  },
+}
+
+export const SomeProps: StoryObj<typeof {{ name }}> = {
+  name: 'someProps',
+  args: {
+  },
+}

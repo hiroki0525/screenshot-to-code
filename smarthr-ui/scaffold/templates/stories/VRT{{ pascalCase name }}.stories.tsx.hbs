@@ -1,0 +1,45 @@
+import { fireEvent, within } from '@storybook/test'
+import React from 'react'
+
+import { Stack } from '../../Layout'
+import { {{ name }} } from '../{{ name }}'
+
+import type { Meta, StoryObj } from '@storybook/react'
+
+export default {
+  title: 'SomeCategory（カテゴリ）/{{ name }}/VRT',
+  /* ペアワイズ法による網羅 */
+  render: (args) => (
+    <Stack>
+      <{{ name }} {...args} />
+      <{{ name }} {...args} />
+    </Stack>
+  ),
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+  tags: ['!autodocs'],
+} satisfies Meta<typeof {{ name }}>
+
+export const VRT = {}
+
+export const VRTHover = {
+  ...VRT,
+  args: {
+    id: 'hover',
+  },
+  parameters: {
+    pseudo: {
+      hover: ['#hover .smarthr-ui-{{ name }}'],
+    },
+    // MEMO: VRT として機能していないので、解決するまでスナップショットを無効化
+    chromatic: { disableSnapshot: true },
+  },
+}
+
+export const VRTForcedColors: StoryObj = {
+  ...VRT,
+  parameters: {
+    chromatic: { forcedColors: 'active' },
+  },
+}
