@@ -86,6 +86,11 @@ docker-compose up -d --build
 
 The app will be up and running at http://localhost:5173. Note that you can't develop the application with this setup as the file changes won't trigger a rebuild.
 
+## Others
+
+- `brew install ffmpeg`
+  - https://github.com/abi/screenshot-to-code/issues/226#issuecomment-2153481320
+
 ## 🙋‍♂️ FAQs
 
 - **I'm running into an error when setting up the backend. How can I fix it?** [Try this](https://github.com/abi/screenshot-to-code/issues/3#issuecomment-1814777959). If that still doesn't work, open an issue.
