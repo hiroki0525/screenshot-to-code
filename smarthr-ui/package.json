@@ -129,9 +129,8 @@
   },
   "scripts": {
     "build": "run-p build:*",
-    "build:lib": "tsc -p tsconfig.build.json",
-    "build:esm": "tsc -p tsconfig.esm.build.json",
-    "build:css": "tailwindcss -i ./src/styles/index.css -o ./smarthr-ui.css",
+    "build:tsup": "tsup",
+    "build:css": "tailwindcss -i ./src/styles/index.css -o ../backend/static/dist/smarthr-ui.css",
     "build-storybook": "storybook build --quiet",
     "build-stylesheet": "ttsc -p tsconfig.stylesheet.json; node scripts/build-stylesheet.ts",
     "clean": "rimraf ./lib ./esm ./smarthr-ui.css",

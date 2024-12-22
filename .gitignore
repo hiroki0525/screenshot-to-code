@@ -16,3 +16,4 @@ frontend/.env.local
 .DS_Store
 
 node_modules/
+/backend/static/dist/*
