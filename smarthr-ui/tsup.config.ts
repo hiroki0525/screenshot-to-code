@@ -4,8 +4,11 @@ export default defineConfig([
     {
         clean: true,
         dts: true,
-        format: "iife",
+        format: "esm",
         entry: ["src/index.ts"],
-        outDir: '../backend/static/dist'
+        outDir: '../backend/dist',
+        tsconfig: "tsconfig.build.json",
+        treeshake: true,
+        shims: true,
     }
 ]);
