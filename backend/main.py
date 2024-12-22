@@ -1,5 +1,6 @@
 # Load environment variables first
 from dotenv import load_dotenv
+from fastapi.staticfiles import StaticFiles
 
 load_dotenv()
 
@@ -18,6 +19,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Hosting static files
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Add routes
 app.include_router(generate_code.router)
