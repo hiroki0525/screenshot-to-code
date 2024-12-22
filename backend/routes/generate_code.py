@@ -262,6 +262,10 @@ async def stream_code(websocket: WebSocket):
                         claude_model,
                         Llm.CLAUDE_3_5_SONNET_2024_06_20,
                     ]
+                elif GEMINI_API_KEY:
+                    variant_models = [
+                        Llm.GEMINI_2_0_FLASH_EXP,
+                    ]
                 else:
                     await throw_error(
                         "No OpenAI or Anthropic API key found. Please add the environment variable OPENAI_API_KEY or ANTHROPIC_API_KEY to backend/.env or in the settings dialog. If you add it to .env, make sure to restart the backend server."
