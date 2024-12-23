@@ -6,9 +6,10 @@ export default defineConfig([
         dts: true,
         format: "esm",
         entry: ["src/index.ts"],
-        outDir: '../backend/dist',
-        tsconfig: "tsconfig.build.json",
+        outDir: '../backend/static/dist',
+        tsconfig: "tsconfig.esm.build.json",
         treeshake: true,
         shims: true,
+        target: 'chrome131'
     }
 ]);
