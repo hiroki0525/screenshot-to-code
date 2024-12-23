@@ -1,6 +1,4 @@
-from urllib.request import urlopen
 from prompts.types import SystemPrompts
-
 
 HTML_TAILWIND_SYSTEM_PROMPT = """
 You are an expert Tailwind developer
@@ -200,11 +198,25 @@ Do not include markdown "```" or "```svg" at the start or end.
 """
 
 
-css_url = "https://unpkg.com/smarthr-ui@62.2.3/smarthr-ui.css"
+css_url = "http://localhost:7001/static/dist/smarthr-ui.css"
+css_path = "./static/dist/smarthr-ui.css"
 css_content = ""
 
-with urlopen(css_url) as response:
-    css_content = response.read().decode("utf-8")
+with open(css_path, encoding="utf-8") as f:
+    css_content = f.read()
+
+type_path = "./static/dist/index.d.mts"
+type_content = ""
+
+with open(type_path, encoding="utf-8") as f:
+    css_content = f.read()
+
+js_url = "http://localhost:7001/static/dist/index.mjs"
+js_path = "./static/dist/index.mjs"
+js_content = ""
+
+with open(js_path, encoding="utf-8") as f:
+    css_content = f.read()
 
 
 SMARTHR_UI_SYSTEM_PROMPT = f"""
@@ -230,9 +242,9 @@ padding, margin, border, etc. Match the colors and sizes exactly.
 
 <div id="root"></div>
 <script type="text/babel" data-presets="react" data-type="module">
-  import React from "https://esm.sh/react@19"
-  import {{ createRoot }} from "https://esm.sh/react-dom@19/client"
-  import {{ Button }} from "https://esm.sh/smarthr-ui@62.2.3"
+  import React from "https://esm.sh/react@18"
+  import {{ createRoot }} from "https://esm.sh/react-dom@18/client"
+  import {{ Button }} from "{js_url}"
 
   function App() {{
     return (
@@ -250,63 +262,15 @@ In terms of libraries,
     <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
 - Use this style to include SmartHR UI:
     <link rel="stylesheet" href="{css_url}"></link>
-- You can use SmartHR UI components like so:
+- You can use SmartHR UI components. The `smarthr-ui` type definitions and implementations are as follows
 
-* Balloon
-* CheckBox
-* Chip
-* Dropdown
-* FlashMessage
-* FloatArea
-* Input
-* InputFile
-* Textarea
-* TextLink
-* UpwardLink
-* Loader
-* Dialog
-* Pagination
-* RadioButton
-* RadioButtonPanel
-* Button
-* StatusLabel
-* Base
-* Icon
-* SmartHRLogo
-* Table
-* AppNavi
-* TabBar
-* Heading
-* Select
-* DropZone
-* DefinitionList
-* AccordionPanel
-* InformationPanel
-* Tooltip
-* BottomFixedArea
-* ErrorScreen
-* Calendar
-* DatePicker
-* SegmentedControl
-* FormControl
-* Fieldset
-* ComboBox
-* SideNav
-* Text
-* LineClamp
-* NotificationBar
-* Header
-* PageCounter
-* SectioningContent
-* VisuallyHiddenText
-* SpreadsheetTable
-* ResponseMessage
-* Badge
-* Switch
-* Stepper
-* Picker
-* Browser
-* Layout
+```ts
+{type_content}
+```
+
+```js
+{js_content}
+```
 
 Return only the full code in <html></html> tags.
 Do not include markdown "```" or "```html" at the start or end.
