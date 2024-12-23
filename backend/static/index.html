@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <link rel="stylesheet" href="http://localhost:7001/static/dist/smarthr-ui.css"></link>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18",
+          "react-dom": "https://esm.sh/react-dom@18",
+          "tailwind-variants": "https://esm.sh/tailwind-variants@0.3.0",
+          "react-icons/fa6": "https://esm.sh/react-icons@5.4.0/fa6",
+          "tailwindcss/resolveConfig": "https://esm.sh/tailwindcss@3.4.17/resolveConfig",
+          "tailwindcss/plugin": "https://esm.sh/tailwindcss@3.4.17/plugin",
+          "polished": "https://esm.sh/polished@4.3.1",
+          "lodash.merge": "https://esm.sh/lodash.merge@4.6.2",
+          "lodash.range": "https://esm.sh/lodash.range@3.2.0",
+          "react-icons": "https://esm.sh/react-icons@5.4.0",
+          "react-innertext": "https://esm.sh/react-innertext@1.1.5",
+          "react-transition-group": "https://esm.sh/react-transition-group@4.4.5",
+          "styled-components": "https://esm.sh/styled-components@6.1.13",
+          "react-draggable": "https://esm.sh/react-draggable@4.4.6",
+          "dayjs": "https://esm.sh/dayjs@1.11.13",
+          "dayjs/plugin/isBetween": "https://esm.sh/dayjs@1.11.13/plugin/isBetween",
+          "@smarthr/wareki": "https://esm.sh/@smarthr/wareki@1.3.0"
+        }
+      }
+      </script>
+    <script type="text/babel" data-presets="react" data-type="module">
+      import React from "https://esm.sh/react@18"
+      import { createRoot } from "https://esm.sh/react-dom@18/client"
+      import { Button, FaCodeIcon, FaCaretDownIcon } from 'http://localhost:7001/static/dist/index.mjs'
+
+
+      function App() {
+        return (
+          <Button variant="primary" suffix={<FaCaretDownIcon />} prefix={<FaCodeIcon />}>Code</Button>
+        );
+      }
+
+      const root = createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>

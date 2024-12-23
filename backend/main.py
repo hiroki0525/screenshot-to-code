@@ -7,7 +7,7 @@ load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import screenshot, generate_code, home, evals
+from routes import evals, generate_code, home, screenshot
 
 app = FastAPI(openapi_url=None, docs_url=None, redoc_url=None)
 
@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # Hosting static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 # Add routes
 app.include_router(generate_code.router)
