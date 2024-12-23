@@ -12,5 +12,6 @@
   ],
   "python.autoComplete.extraPaths": [
     "./backend"
-  ]
+  ],
+  "jest.enable": false,
 }

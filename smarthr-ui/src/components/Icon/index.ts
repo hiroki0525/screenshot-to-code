@@ -1,3 +1,3 @@
-export * from './Icon'
 export * from './DeprecatedIcon'
-export { generateIcon, Props as ComponentProps } from './generateIcon'
+export { Props as ComponentProps, generateIcon } from './generateIcon'
+export * from './Icon'

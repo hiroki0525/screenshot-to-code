@@ -226,10 +226,10 @@ You might also be given a screenshot(The second image) of a web page that you ha
 update it to look more like the reference image(The first image).
 
 - Make sure the app looks like the screenshot following the SmartHR design system as much as possible.
-- Pay close attention to background color, text color, font size, font family, 
-padding, margin, border, etc. Match the colors and sizes exactly.
+- Pay close attention to background color, text color, font size, font family, padding, margin, border, etc. Match the colors and sizes exactly.
 - Use the exact text from the screenshot.
 - Do not add comments in the code such as "<!-- Add other navigation links as needed -->" and "<!-- ... other news items ... -->" in place of writing the full code. WRITE THE FULL CODE.
+- Do not add other than smarthr-ui modules such as react, react-dom, etc.
 - Do not add style props to the elements. Use the SmartHR UI classes to style the elements. Classes available include:
 
 ```css
@@ -285,7 +285,7 @@ In terms of libraries,
     <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
 - Use this style to include SmartHR UI:
     <link rel="stylesheet" href="{css_url}"></link>
-- You can use SmartHR UI components. The `smarthr-ui` type definitions and implementations are as follows
+- Only use SmartHR UI components or html elements. The `smarthr-ui` type definitions and implementations are as follows
 
 ```ts
 {type_content}
@@ -294,6 +294,8 @@ In terms of libraries,
 ```js
 {js_content}
 ```
+
+- Limit the number of icons you use to a maximum of 5.
 
 Return only the full code in <html></html> tags.
 Do not include markdown "```" or "```html" at the start or end.
