@@ -128,7 +128,7 @@
     "url": "git+https://github.com/kufu/smarthr-ui.git"
   },
   "scripts": {
-    "build": "run-p build:*",
+    "build": "run-s build:*",
     "build:tsup": "tsup",
     "build:css": "tailwindcss -i ./src/styles/index.css -o ../backend/static/dist/smarthr-ui.css",
     "build-storybook": "storybook build --quiet",
